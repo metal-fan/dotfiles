@@ -1,0 +1,6 @@
+alias vboxmanage="/mnt/c/Program\ Files/Oracle/Virtualbox/VBoxManage.exe"
+alias blender="/mnt/c/Program\ Files/Blender\ Foundation/Blender\ 2.92/blender.exe"
+alias dl="wmic.exe diskdrive list brief" 
+alias wmic="wmic.exe"
+alias wm="wmic.exe"
+alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"

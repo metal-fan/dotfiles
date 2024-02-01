@@ -1,0 +1,29 @@
+# -*- shell-script -*-
+#
+alias ls='ls -Go'
+alias gccdef="gcc -arch i386 -dM -E - < /dev/null | sort"
+alias cypher='hdiutil create -encryption AES-256 -srcfolder'
+alias cmacros='gcc -dM -E - < /dev/null'
+alias vlc='/Applications/Multimédia/VLC.app/Contents/MacOS/VLC'
+alias psa='ps -ax -o pid,ppid,pcpu,pmem,uid,command'
+alias psu='ps -o pid,ppid,pcpu,pmem,command -u ulm424'
+alias tc='/Applications/Veracrypt.app/Contents/MacOS/VeraCrypt -t -k "" --protect-hidden=no'
+alias tcvv='tcv /dev/rdisk3s1 /tmp/tc'
+
+#alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+
+alias ssync='rsync -avu --max-size=100M --exclude-from=$HOME/.cfg/bash/rsync-exclude-list.cfg'
+
+alias sg-home='ssync $USER_SHARE/ ~/'
+alias sp-home='ssync $HOME/ $USER_SHARE'
+alias ss-home='sg-home; sp-home'
+
+alias sg-eda='ssync $EDASURF_SHARE/ $EDASURF_LOCAL'
+alias sp-eda='ssync $EDASURF_LOCAL/ $EDASURF_SHARE'
+alias ss-eda='sg-eda; sp-eda'
+
+alias pgrep='psa | grep'
+alias sqlite='sqlite3 -init $HOME/.cfg/sqlite/sqliterc'
+alias inkscape='/Applications/Inkscape.app/Contents/Resources/bin/inkscape'
+alias ink='inkscape -z --export-dpi=600'
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'

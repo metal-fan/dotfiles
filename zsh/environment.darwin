@@ -1,0 +1,7 @@
+# -*- shell-script -*-
+#
+export GEM_PATH=$HOME/code/ruby/gems
+export PATH=/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/texlive/2013/bin/x86_64-darwin:/usr/local/share/pypy
+
+export TEXMFHOME=$HOME/.cfg/tex
+export TEXINPUTS=$HOME/.cfg/tex:.:

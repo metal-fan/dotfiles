@@ -1,0 +1,146 @@
+#!/bin/sh
+#
+# The script should be executed in POSIX shell 
+#
+# The script uses tricky substitutions. Gentle reminder :
+# +--------------------+----------------------+-----------------+-----------------+
+#|   Expression       |  When FOO="world"    |  When FOO=""    |    unset FOO    |
+#|   in script:       |  (Set and Not Null)  |  (Set But Null) |     (Unset)     |
+#+--------------------+----------------------+-----------------+-----------------+
+#| ${FOO:-hello}      | world                | hello           | hello           |
+#| ${FOO-hello}       | world                | ""              | hello           |
+#| ${FOO:=hello}      | world                | FOO=hello       | FOO=hello       |
+#| ${FOO=hello}       | world                | ""              | FOO=hello       |
+#| ${FOO:?hello}      | world                | error, exit     | error, exit     |
+#| ${FOO?hello}       | world                | ""              | error, exit     |
+#| ${FOO:+hello}      | hello                | ""              | ""              |
+#| ${FOO+hello}       | hello                | hello           | ""              |
+#+--------------------+----------------------+-----------------+-----------------+
+#
+set -e
+
+# The [ -t 1 ] check only works when the function is not called from
+# a subshell (like in `$(...)` or `(...)`, so this hack redefines the
+# function at the top level to always return false when stdout is not
+# a tty.
+if [ -t 1 ]; then
+  is_tty() { 
+      true 
+  }
+else
+  is_tty() { 
+      false 
+  }
+fi
+
+is_set()   { 
+    test -n "${1+set}" 
+}
+
+is_unset() { 
+    test -z "${1+set}" 
+}
+
+setup_color() {
+    # Only use colors if connected to a terminal
+    if ! is_tty; then
+        FMT_RED=""
+        FMT_GREEN=""
+        FMT_YELLOW=""
+        FMT_BLUE=""
+        FMT_BOLD=""
+        FMT_RESET=""
+        return
+    fi
+
+    FMT_RED=$(printf '\033[31m')
+    FMT_GREEN=$(printf '\033[32m')
+    FMT_YELLOW=$(printf '\033[33m')
+    FMT_BLUE=$(printf '\033[34m')
+    FMT_BOLD=$(printf '\033[1m')
+    FMT_RESET=$(printf '\033[0m')
+}
+
+info() {
+    printf "%s[Info]%s %s\n" "${FMT_GREEN}" "${FMT_RESET}" "$*"
+}
+
+error() {
+    printf '%s%s[Error]%s %s. Exit !\n' "${FMT_BOLD}" "${FMT_RED}" "${FMT_RESET}" "$*" 
+    exit 1
+}
+
+require() {
+    while [ $# -gt 0 ]; do 
+        if command -v $1 1>/dev/null 2>&1; then
+            info "$1 installed ?... OK"
+        else
+            error "Command $1 is not installed"
+        fi
+        shift
+    done
+}
+
+setup_zsh() {
+    if is_set $dryrun; then
+        info "${FMT_BLUE}[ZSH CONFIG] ${FMT_BOLD}!!! Dryn run !!!${FMT_RESET}"
+    else
+        info "${FMT_BLUE}[ZSH_CONFIG]${FMT_RESET}"
+    fi 
+
+    if env | grep ZSH_CONFIG 1>/dev/null 2>&1; then
+        info "  Will use default value of ZSH_CONFIG: $ZSH_CONFIG"
+    else
+        export ZSH_CONFIG="$HOME/.config/zsh"
+        info "  Set value of ZSH_CONFIG to $ZSH_CONFIG"
+    fi
+}
+
+setup_omz() {
+    if is_set $dryrun; then
+        info "${FMT_BLUE}[OH-MY-ZSH] ${FMT_BOLD}!!! Dry run !!!${FMT_RESET}"
+    else
+        info "${FMT_BLUE}[OH-MY-ZSH]${FMT_RESET}"
+    fi
+
+    info "  ZSH_CONFIG : ${ZSH_CONFIG:=~/.config/zsh}"
+    info "  ZSH        : ${ZSH:=$ZSH_CONFIG/oh-my-zsh}"
+    info "  KEEP_ZSHRC : ${KEEP_ZSHRC:=yes}"
+    info "  CHSH       : ${CHSH:=no}"
+
+    # Now we can run oh-my-zsh installation script 
+    if is_set $dryrun; then return 0;fi
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+}
+
+main() {
+    # Preconditions
+    setup_color
+    require ssh git curl gum
+
+    # Basic arguments management
+    while [ $# -gt 0 ]; do 
+        case $1 in 
+            --dryrun|--dry-run|-d)
+                dryrun="set"
+                ;;
+            --silent|-s)
+                silent="set"
+                ;;
+            --disable-zsh)
+                dzsh="set"
+                ;;
+            --disable-omz)
+                domz="set"
+                ;;
+        esac
+        shift
+    done
+
+    # Oh my Zsh installation
+    setup_omz
+}
+
+main "$@"
+
+# EOF

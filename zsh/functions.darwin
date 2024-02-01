@@ -1,0 +1,23 @@
+# -*- shell-script -*-
+
+# Creé un coffre fort avec hdiutil
+function safe-alexia () {
+    while getopts s:v:f: args; do
+	case "$args"; in
+	    v|f)
+		echo "flag $args set with $OPTARG"
+		;;
+	    s)
+		echo "flag $args set with $OPTARG"
+		;; 
+	    *)
+		echo "Usage..."
+		;; 
+	esac
+    done
+    #printf '#Alexia@24>' | hdiutil create -stdinpass -encryption AES-256 -size $1 -fs HFS+ -volname $2 $2.alexia.dmg
+}
+
+function safe-australie () { 
+	 printf '#truganini@74>' | hdiutil create -stdinpass -encryption AES-256 -size $1 -fs HFS+ -volname $2 $2.australia.dmg
+}

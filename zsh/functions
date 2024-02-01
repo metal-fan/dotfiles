@@ -1,0 +1,60 @@
+# -*- shell-script -*-
+
+# Create a directory and go inside
+mcd() { 
+      mkdir -p "$1" && cd "$1"
+}
+
+# Search a file that match string
+ffa() {
+     find . -type f -name '*'$*'*' -ls
+}
+
+ff() {
+     find . -type f -name '*'$*'*'
+}
+
+ffall() {
+	find / -type f -name '*'$*'*'
+}
+
+# Search a file with pattern $1 in name and execute $2
+fe() {
+     find . -type f -name '*'$1'*' -exec "${2:-file}" {} \; ;
+}
+
+# swap two files around
+swap() {
+       local TMPFILE=tmp.$$
+       mv "$1" $TMPFILE
+       mv "$2" "$1"
+       mv $TMPFILE "$2"
+}	 
+
+
+# security function using openssl
+genkey() {
+    head -c 2048 /dev/random | openssl genrsa -out $*'.pem' -rand - 2048
+    openssl rsa -in $*'.pem' -pubout -out $*'.pub.pem'
+    chmod 400 $*{,.pub}.key
+    printf "\nKey file saved in "$*".pem"
+}
+
+# convert film sound from AAC5.1 to AC2
+5to2() {
+    ffmpeg -i "$1" -map 0 -c copy -c:a libmp3lame -ac 2 -b:a 320k "$2"
+}
+
+# convert FLAC sound file into MP3 320 using ffmpeg
+flac2mp3() {
+    find . -name "*.flac" -exec ffmpeg -i {} -ab 320k {}.mp3 \;
+}
+
+# Functions dedicated to armona vcenter
+#
+vlsa() {
+  for vm in $(vcurl https://vcenter.armona.fr/$vrest_list | jq -crf $CONFIG/zsh/jq/vcenter-list-vms.raw.jq |xargs); do
+    vcurl https://vcenter.armona.fr/$vrest_list/$vm | jq -crf $CONFIG/zsh/jq/vcenter-vm-info.jq
+  done | gum table -p -w 20 --height 20 -c "Nom,Etat  ,Mem en Go,CPU,Invité         ,Réseau           ,Disque en Go" 
+  #done
+}

@@ -1,0 +1,116 @@
+# -*- shell-script -*-
+
+# Pour tous les linux
+alias rerun="source $HOME/.zshrc"
+alias ls='ls -GL'
+alias ll='ls -lh'
+alias la='ls -A'
+alias lsa='ls -A | grep ^[.]'
+alias lla='ls -lA | grep ^[.]'
+alias l='ls -CF'
+alias sr='sudo su -'
+alias _='sudo'
+alias __='sudo su -'
+alias tct='truecrypt -t'
+alias tc='truecrypt -t'
+alias ping='ping -c 1'
+alias em='emacs'
+#alias vi='vim -u $CONFIG/vim/vimrc -i $CONFIG/vim/viminfo'
+alias vi='nvim'
+alias line='echo "" && echo "--------------------------------------------------------------------------"'
+alias more='less'
+alias psu='ps -u $USER -o pid,ppid,%cpu,%mem,command'
+alias curl='curl -ks --netrc-file $HOME/.config/curl/netrc '
+alias chromedev='chrome --auto-open-devtools-for-tabs'
+
+case ${osid} in 
+	ubuntu)
+		alias upd="sudo apt update && sudo apt upgrade -y"
+		;;
+	alpine)
+		;;
+	arch)
+		alias upd="yaourt -Syu --noconfirm --force"
+		;;
+	darwin)
+    alias upd="softwareupdate -i -a"
+		;;
+esac
+
+# Git
+alias gpa='git remote | xargs -L1 git push'
+
+# Virtualbox
+alias vstart='vboxmanage startvm'
+alias vh='vboxmanage startvm -type headless'
+alias vc='vboxmanage controlvm'
+alias vl='vboxmanage list vms'
+alias vbx='vboxmanage'
+alias vs='vboxmanage startvm'
+alias vbi='vboxmanage showvminfo'
+alias vbl='vboxmanage list vms'
+alias vblr='vboxmanage list runningvms'
+
+# Docker 
+alias dki='docker image'
+alias dkc='docker container'
+alias dkr='docker run'
+
+if command -v gum 1>/dev/null; then
+    alias dkli='docker image ls -a | gum table -p'
+    alias dklc='docker container ls -a | gum table -p'
+    alias dkln='docker network ls | gum table -p'
+    alias dklv='docker volume ls | gum table -p'
+    alias dkls='dkli && dklc && dkln && dklv'
+else
+    alias dkli='docker image ls -a'
+    alias dklc='docker container ls -a'
+    alias dkln='docker network ls'
+    alias dklv='docker volume ls'
+    alias dkls='line && dkli && line && dklc && line && dkln && line && dklv'
+fi 
+
+# Terraform
+alias tf='terraform'
+alias tfa='terraform apply'
+alias tfaa='terraform apply --auto-approve'
+alias tfg='terraform get'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tff='terraform fmt'
+alias tfd='terraform destroy'
+
+# Elasticsearch
+alias eln='curl http://localhost:9200/_cat/nodes?v'
+alias eli='curl http://localhost:9200/_cat/indices?v'
+alias ela='curl http://localhost:9200/_cat/allocation?v'
+
+# AWS EC2
+alias ec2='aws ec2'
+alias ec2ls="aws ec2 describe-instances --query \"Reservations[*].Instances[*].{PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Name:Tags[?Key=='Name']|[0].Value,Type:InstanceType,Status:State.Name,VpcId:VpcId}\" --filters Name=instance-state-name,Values=running --output table"
+
+alias rmo='find $HOME -name "*~" -exec rm {} \;'
+alias dockerx='docker -H 192.168.1.1:2375'
+
+# Conversions audio / video
+alias wma2flac='for i in *.wma; do ffmpeg -i "${i}" -c:a flac "${i%%.wma}.flac"; done'
+alias wma2mp3='for i in *.wma; do ffmpeg -i "${i}" -ab 320k -map_metadata 0 -id3v2_version 3 "${i%%.wma}.mp3"; done'
+
+### Aliases speciaux pour Armona
+#
+# Elasticsearch
+alias eals='curl https://10.0.0.4:9200/_cat/indices'
+alias eau='curl https://10.0.0.4:9200/_security/user | jq'
+alias eaalloc='curl https://10.0.0.4:9200/_cat/allocation | jq'
+alias eanodes='curl https://10.0.0.4:9200/_cat/nodes'
+
+# Vcenter
+alias vcurl='curl -H "$vtoken"'
+alias vget='vcurl -X GET'
+alias vpost='vcurl -X POST'
+alias vput='vcurl -X PUT'
+alias vdel='vcurl -X DEL'
+alias vsession='export vtoken="vmware-api-session-id: $(curl -X POST https://vcenter.armona.fr/$vrest_session | jq -r .value)"'
+alias vls='vcurl https://vcenter.armona.fr/$vrest_list | jq -crf $CONFIG/zsh/jq/vcenter-list-vms.jq | gum table -w 20 --height=20 -c "Nom,Etat,Memoire,CPU" --header.bold --header.underline'
+alias vlsr='vcurl https://vcenter.armona.fr/$vrest_list | jq -crf $CONFIG/zsh/jq/vcenter-list-running-vms.jq'
+# EOF

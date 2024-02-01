@@ -1,0 +1,10 @@
+# -*- shell-script -*-
+
+### Fonctions dédiées au prompt
+#
+chevron() { echo -e '\u2771' }
+bar()     { echo -e '\u275A' }
+chariot() { echo '\n' }
+losange() { echo -e '\u2756' }
+
+export PROMPT="%F{red}$(losange) %n.%m%f%F{magenta} $(losange) %~%f %F{green}$(chevron)%f "

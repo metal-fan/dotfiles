@@ -1,0 +1,52 @@
+# -*- shell-script -*-
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export CONFIG="$HOME/.config"
+export CFG="$HOME/.cfg"
+export ZSH="$CONFIG/zsh/oh-my-zsh"
+export PROMPT='%F{red}[%n.%m]%f %F{magenta}%~%f %F{green}#%f '
+export DISPLAY='localhost:0.0'
+
+export EDITOR=/usr/bin/nvim
+export HISTCONTROL=ignoredups           # ignore les doublons dans l'historique
+export HISTCONTROL=ignoreboth           # ignore les entres doubles successives
+export WINEDEBUG=-all                   # enleve le debug des applis wine
+
+export GIMP2_DIRECTORY=$CONFIG/gimp
+export GEM_PATH=$HOME/code/ruby/gems
+export CLICOLOR=1
+
+export OS=$(uname -s | tr "[:upper:]" "[:lower:]")
+if [[ ${OS} = linux ]]; then 
+	if uname -a |grep "Microsoft" 1>/dev/null 2>/dev/null; then
+    		OS=windows
+	fi
+	export $(grep ^ID= /etc/os-release | sed -e s/ID/OSID/ | tr "[:upper:]" "[:lower:]")
+fi
+
+export PAGER='less'
+export LESS='-i -N -w -z-4 -g -e -M -X -F -R -P%y?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+export SHELL=zsh
+
+# Ruby world
+export RUBYLIB=$HOME/code/ruby:$CONFIG/ruby
+export IRBRC=$CONFIG/ruby/irbrc
+export GEM_HOME=$HOME/.gems
+export PATH="$PATH:$GEM_HOME/bin"
+
+# Docker
+#export DOCKER_HOST=192.168.1.1:2375
+
+# Git
+export GIT_CONFIG=$CONFIG/git/gitconfig
+
+# GnuPG
+export GNUPGHOME=$CONFIG/gpg
+
+# Aws
+export AWS_CONFIG_FILE=$CONFIG/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=$CONFIG/aws/credentials
+
+# Vcenter REST topology
+export vrest_session="rest/com/vmware/cis/session"
+export vrest_list="rest/vcenter/vm"
