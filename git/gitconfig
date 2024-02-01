@@ -1,0 +1,36 @@
+[user]
+	email = sylvain.navers@gmail.com
+	name = Sylvain Navers
+    signingKey = 3CACE9158D84721D
+
+[core]
+	excludesfile = ~/.config/git/gitignore
+	eol = lf
+	autocrlf = false
+
+[alias]
+	st = status
+	ch = checkout
+    co = "!git commit -a -m"
+    pushall = "!git remote |xargs -L1 git push"
+
+
+[includeIf "gitdir:~/code.local/armona"]
+	path = ~/.config/git/gitconfig.armona
+
+# Je l'ai plutôt activé dans le repo de kibana pour l'avoir dans les autres
+# En effet le repo de Kibana pses 3Go et un cd dans ce répertoire rame à cause
+# de git status automatique dans le plugin git de oh-my-zsh
+#[oh-my-zsh]
+#	hide-status = 1
+#	hide-dirty = 1
+[fsck]
+	zeroPaddedFilemode = ignore
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+[receive "fsck"]
+	zeroPaddedFilemode = ignore
+[oh-my-zsh]
+	lastVersion = 8be4789bbbef06fe5eed581dc8c58df51e3cd9fd
+	remote = origin
+	branch = master
