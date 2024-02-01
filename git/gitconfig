@@ -14,6 +14,8 @@
     co = "!git commit -a -m"
     pushall = "!git remote |xargs -L1 git push"
 
+[commit]
+    gpgsign = true
 
 [includeIf "gitdir:~/code.local/armona"]
 	path = ~/.config/git/gitconfig.armona
