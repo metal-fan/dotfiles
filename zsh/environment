@@ -18,7 +18,7 @@ export CLICOLOR=1
 
 export OS=$(uname -s | tr "[:upper:]" "[:lower:]")
 if [[ ${OS} = linux ]]; then 
-	if uname -a |grep "Microsoft" 1>/dev/null 2>/dev/null; then
+	if uname -a |grep "microsoft" 1>/dev/null 2>/dev/null; then
     		OS=windows
 	fi
 	export $(grep ^ID= /etc/os-release | sed -e s/ID/OSID/ | tr "[:upper:]" "[:lower:]")
