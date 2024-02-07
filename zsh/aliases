@@ -41,15 +41,22 @@ esac
 alias gpa='git remote | xargs -L1 git push'
 
 # Virtualbox
-alias vstart='vboxmanage startvm'
+alias vs='vboxmanage startvm'
 alias vh='vboxmanage startvm -type headless'
 alias vc='vboxmanage controlvm'
 alias vl='vboxmanage list vms'
 alias vbx='vboxmanage'
-alias vs='vboxmanage startvm'
+alias vstart='vboxmanage startvm $(vbl | cut -d" " -f 1 | xargs gum choose --limit=1 --select-if-one --header="Select the VM to start")'
+alias vstop='vboxmanage controlvm $(vblr | cut -d" " -f 1 | xargs gum choose --limit=1 --select-if-one --header="Select the VM to stop") poweroff'
 alias vbi='vboxmanage showvminfo'
 alias vbl='vboxmanage list vms'
 alias vblr='vboxmanage list runningvms'
+
+if command -v gum 1>/dev/null 2>&1; then
+    alias vstart='vboxmanage startvm $(vbl | cut -d" " -f 1 | xargs gum choose --limit=1 --select-if-one --header="Select the VM to start")'
+    alias vstop='vboxmanage controlvm $(vblr | cut -d" " -f 1 | xargs gum choose --limit=1 --select-if-one --header="Select the VM to stop") poweroff'
+    alias vprop="{echo 'Parameter=Value' && vbx guestproperty enumerate $(vblr | cut -d' ' -f 1 |xargs gum choose --limit=1 --select-if-one --header='Select your VM')} | cut -d'@' -f 1 | gum table --separator='=' -p"
+fi
 
 # Docker 
 alias dki='docker image'
