@@ -33,6 +33,6 @@
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = 8be4789bbbef06fe5eed581dc8c58df51e3cd9fd
+	lastVersion = 80c114cb3a64044ea50b623f96a35bc022db5e8d
 	remote = origin
 	branch = master
