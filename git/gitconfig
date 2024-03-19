@@ -7,6 +7,7 @@
 	excludesfile = ~/.config/git/gitignore
 	eol = lf
 	autocrlf = false
+  editor = nvim
 
 [alias]
 	st = status
