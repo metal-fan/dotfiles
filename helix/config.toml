@@ -18,9 +18,16 @@ mode.select = "SELECT"
 auto-signature-help = false
 display-messages = true
 
+[editor.indent-guides]
+character = "⸽"
+
 [keys.normal]
 Z = {Z = ":write-quit-all!"}
 C-s = ":write-all"
 C-r = ":config-reload"
 C-o = ":config-open"
 
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
