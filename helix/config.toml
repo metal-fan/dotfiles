@@ -4,15 +4,36 @@ theme = "catppuccin_mocha"
 true-color = true
 color-modes = true
 bufferline = "multiple"
+mouse = true
+cursorline = true
+cursorcolumn = false
 
 [editor.statusline]
-left   = ["mode", "spacer", "version-control", "spacer", "file-name"]
-center = []
-right  = ["diagnostics", "file-encoding"]
+left   = ["mode", "spacer", "version-control", "spacer", "separator", "spinner"]
+center = ["file-name"]
+right  = ["position", "separator", "spacer", "file-encoding"]
+separator = "│"
 #:wmode-separator = "slanted"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+wrap-indicator = "↩ "
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"    # Non Breaking SPace
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
 [editor.lsp]
 auto-signature-help = false
@@ -20,14 +41,24 @@ display-messages = true
 
 [editor.indent-guides]
 character = "⸽"
+render = true
+skip-levels = 1
+
+[editor.file-picker]
+hidden = false
 
 [keys.normal]
 Z = {Z = ":write-quit-all!"}
 C-s = ":write-all"
 C-r = ":config-reload"
 C-o = ":config-open"
+S-tab = ":buffer-next"
+ins = "insert_mode"
 
 [keys.normal."+"]
 m = ":run-shell-command make"
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
+
+[keys.insert]
+ins = "normal_mode"
