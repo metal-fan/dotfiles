@@ -25,7 +25,7 @@ if [[ ${OS} = linux ]]; then
 fi
 
 export PAGER='less'
-export LESS='-i -N -w -z-4 -g -e -M -X -F -R -P%y?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+#export LESS='-i -N -w -z-4 -g -e -M -X -F -R -P%y?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 export SHELL=zsh
 
 # Conda python

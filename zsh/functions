@@ -1,5 +1,16 @@
 # -*- shell-script -*-
 
+# Test if a command exists
+require() {
+	while (( $# > 0 )); do
+		if ! command -v $1 1>/dev/null 2>&1; then
+			return 1
+		fi
+		shift
+	done
+	return 0
+}
+
 # Create a directory and go inside
 mcd() { 
       mkdir -p "$1" && cd "$1"
