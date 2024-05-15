@@ -20,7 +20,7 @@ start_hypr() {
 	export WLR_RENDERER_ALLOW_SOFTWARE=1
 	export LIBGL_ALWAYS_SOFTWARE=true
 	export GALLIUM_DRIVER=llvmpipe
-	exec Hyprland
+	Hyprland
 }
 
 # Create a directory and go inside
