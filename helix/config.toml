@@ -10,7 +10,7 @@ cursorcolumn = false
 
 [editor.statusline]
 left   = ["mode", "spacer", "version-control", "spacer", "separator", "spinner"]
-center = ["file-name"]
+center = ["file-base-name"]
 right  = ["position", "separator", "spacer", "file-encoding"]
 separator = "│"
 #:wmode-separator = "slanted"
@@ -62,3 +62,4 @@ t = ":run-shell-command cargo test"
 
 [keys.insert]
 ins = "normal_mode"
+C-s = ":write-all"
