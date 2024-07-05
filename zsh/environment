@@ -42,7 +42,8 @@ export PATH="$PATH:$GEM_HOME/bin"
 #export DOCKER_HOST=192.168.1.1:2375
 
 # Git
-export GIT_CONFIG=$CONFIG/git/gitconfig
+#export GIT_CONFIG=$CONFIG/git/gitconfig
+export GIT_CONFIG_GLOBAL=$CONFIG/git/gitconfig
 
 # GnuPG
 export GNUPGHOME=$CONFIG/gpg
