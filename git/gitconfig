@@ -14,6 +14,9 @@
 	ch = checkout
     co = "!git commit -a -m"
     pushall = "!git remote |xargs -L1 git push"
+	last = log -1
+	lo = log --oneline
+	l5 = log --oneline -5
 
 [commit]
     gpgsign = true
