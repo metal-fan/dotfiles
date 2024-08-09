@@ -37,7 +37,6 @@
 	incoming = log HEAD..@{upstream}
 
 	# what would be pushed
-	outgoing = log @{upstream}..HEAD
 	outgoing = log @{u}..
 
 [commit]
