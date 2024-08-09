@@ -13,10 +13,32 @@
 	st = status
 	ch = checkout
     co = "!git commit -a -m"
+	br = branch
+	sw = switch
     pushall = "!git remote |xargs -L1 git push"
 	last = log -1
 	lo = log --oneline
 	l5 = log --oneline -5
+	structure = log --oneline --simplify-by-decoration --graph --all
+	amend = commit --amend
+	untrack = rm --cached
+	unadd = restore --staged
+
+	# Diff of last commit
+	dlc = diff --cached HEAD^ 
+
+	# list all defined aliases
+	aliases = config --get-regexp alias
+
+	# Find very first commit
+	first = rev-list --max-parents=0 HEAD
+
+	# what would be merged
+	incoming = log HEAD..@{upstream}
+
+	# what would be pushed
+	outgoing = log @{upstream}..HEAD
+	outgoing = log @{u}..
 
 [commit]
     gpgsign = true
