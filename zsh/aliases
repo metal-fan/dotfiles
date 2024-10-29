@@ -37,7 +37,15 @@ case ${osid} in
 		;;
 esac
 
+# Make
+alias mk='make'
+alias mkb='make build'
+alias mkr='make run'
+alias mke='make edit'
+alias mkt='make test'
+
 # Git
+# Ces alias sont destinés à se retrouver dans le gitconfig plus tard
 alias gpa='git remote | xargs -L1 git push'
 
 # Virtualbox
