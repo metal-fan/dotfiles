@@ -95,6 +95,12 @@ alias tfp='terraform plan'
 alias tff='terraform fmt'
 alias tfd='terraform destroy'
 
+# Ollama local LLM
+alias o="ollama"
+alias orun="ollama run"
+alias olist="ollama list"
+alias opull="ollama pull"
+
 # Elasticsearch
 alias eln='curl http://localhost:9200/_cat/nodes?v'
 alias eli='curl http://localhost:9200/_cat/indices?v'
