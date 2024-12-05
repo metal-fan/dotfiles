@@ -23,6 +23,7 @@
 	amend = commit --amend
 	untrack = rm --cached
 	unadd = restore --staged
+	up = remote -v update
 
 	# Diff of last commit
 	dlc = diff --cached HEAD^ 
