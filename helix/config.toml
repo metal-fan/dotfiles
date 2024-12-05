@@ -51,7 +51,9 @@ hidden = false
 Z = {Z = ":write-quit-all!"}
 C-s = ":write-all"
 C-r = ":config-reload"
-C-o = ":config-open"
+C-o = "toggle_comments"
+C-c = ":clipboard-yank"
+C-v = ":clipboard-paste-before"
 S-tab = ":buffer-next"
 ins = "insert_mode"
 
