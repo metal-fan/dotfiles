@@ -43,6 +43,8 @@ alias mkb='make build'
 alias mkr='make run'
 alias mke='make edit'
 alias mkt='make test'
+alias mks='make stat'
+alias mkc='make edit.src'
 
 # Git
 # Ces alias sont destinés à se retrouver dans le gitconfig plus tard
