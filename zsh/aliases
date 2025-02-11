@@ -119,6 +119,12 @@ alias dockerx='docker -H 192.168.1.1:2375'
 alias wma2flac='for i in *.wma; do ffmpeg -i "${i}" -c:a flac "${i%%.wma}.flac"; done'
 alias wma2mp3='for i in *.wma; do ffmpeg -i "${i}" -ab 320k -map_metadata 0 -id3v2_version 3 "${i%%.wma}.mp3"; done'
 
+# Youtube dl
+alias ydl='yt-dlp'
+alias ydll='yt-dlp -F --list-formats'
+alias ydlmp4='yt-dlp -f "bestvideo&#91;ext=mp4]+bestaudio&#91;ext=m4a]/best&#91;ext=mp4]/best"'
+alias ydlmkv='yt-dlp -f "bestvideo&#91;ext=mkv]+bestaudio&#91;ext=m4a]/best&#91;ext=mka]/best"'
+
 ### Aliases speciaux pour Armona
 #
 # Elasticsearch
