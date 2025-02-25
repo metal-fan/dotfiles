@@ -56,6 +56,3 @@ export AWS_SHARED_CREDENTIALS_FILE=$CONFIG/aws/credentials
 export vrest_session="rest/com/vmware/cis/session"
 export vrest_list="rest/vcenter/vm"
 
-# Ansible
-export ANSIBLE_HOME="$HOME/code.local/armona/ansible"
-export ANSIBLE_CONF="$ANSIBLE_HOME/etc"
