@@ -24,6 +24,7 @@
 	untrack = rm --cached
 	unadd = restore --staged
 	up = remote -v update
+	deepclone = clone --recurse-submodules
 
 	# Diff of last commit
 	dlc = diff --cached HEAD^ 
