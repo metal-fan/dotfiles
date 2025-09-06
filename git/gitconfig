@@ -7,7 +7,15 @@
 	excludesfile = ~/.config/git/gitignore
 	eol = lf
 	autocrlf = false
-  editor = nvim
+  	editor = nvim
+	compression = 9
+	packedGitLimit = 512m 
+	packedGitWindowSize = 512m 
+
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
 
 [alias]
 	st = status
@@ -42,7 +50,7 @@
 	outgoing = log @{u}..
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [includeIf "gitdir:~/code.local/armona"]
 	path = ~/.config/git/gitconfig.armona
@@ -63,3 +71,7 @@
 	lastVersion = a87e9c715b2d3249681f9cc8f8d9718030674d50
 	remote = origin
 	branch = master
+[ssh]
+	postBuffer = 524288000
+[http]
+	sslVerify = false
