@@ -4,4 +4,4 @@ alias dl="wmic.exe diskdrive list brief"
 alias wmic="wmic.exe"
 alias wm="wmic.exe"
 alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
-alias bat=batcat
+#alias bat=batcat

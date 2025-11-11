@@ -56,3 +56,5 @@ export AWS_SHARED_CREDENTIALS_FILE=$CONFIG/aws/credentials
 export vrest_session="rest/com/vmware/cis/session"
 export vrest_list="rest/vcenter/vm"
 
+# Nixos flakes and co
+export NH_FLAKE=$HOME/code/nixos
