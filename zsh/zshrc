@@ -6,6 +6,7 @@ for script in environment aliases functions prompt; do
     [ -f $HOME/.config/zsh/$script ] && source $HOME/.config/zsh/$script
     [ -f $HOME/.config/zsh/$script.$OS ] && source $HOME/.config/zsh/$script.$OS
 done
+autoload zmv
 
 plugins=(git macos ruby)
 ZSH_THEME="agnoster"

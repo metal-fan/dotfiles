@@ -37,6 +37,11 @@ case ${osid} in
 		;;
 esac
 
+# Aliases globaux
+alias -g NULL=">/dev/null 2>&1"
+alias -g NO2="2>/dev/null"
+alias -g JQ="| jq"
+
 # Make
 alias mk='make'
 alias mkb='make build'
