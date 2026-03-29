@@ -55,6 +55,9 @@
 [includeIf "gitdir:~/code.local/armona"]
 	path = ~/.config/git/gitconfig.armona
 
+[includeIf "gitdir:~/code/armona"]
+	path = ~/.config/git/gitconfig.armona
+
 # Je l'ai plutôt activé dans le repo de kibana pour l'avoir dans les autres
 # En effet le repo de Kibana pses 3Go et un cd dans ce répertoire rame à cause
 # de git status automatique dans le plugin git de oh-my-zsh
