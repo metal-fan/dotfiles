@@ -14,10 +14,8 @@
 	export TMUX_POWERLINE_PATCHED_FONT_IN_USE="true"
 
 	# The theme to use.
-	export TMUX_POWERLINE_THEME="default"
-	# Overlay directory to look for themes. There you can put your own themes outside the repo. Fallback will still be the "themes" directory in the repo.
+	export TMUX_POWERLINE_THEME="sylvain"
 	export TMUX_POWERLINE_DIR_USER_THEMES="${XDG_CONFIG_HOME:-$HOME/.config}/tmux-powerline/themes"
-	# Overlay directory to look for segments. There you can put your own segments outside the repo. Fallback will still be the "segments" directory in the repo.
 	export TMUX_POWERLINE_DIR_USER_SEGMENTS="${XDG_CONFIG_HOME:-$HOME/.config}/tmux-powerline/segments"
 
 	# The initial visibility of the status bar. Can be {"on", "off", "2"}. 2 will create two status lines: one for the window list and one with status bar segments.
@@ -46,27 +44,27 @@
 	#export TMUX_POWERLINE_MUTE_RIGHT_KEYBINDING="C-]"
 # }
 
-# air.sh {
-	# The data provider to use. Currently only "openweather" is supported.
-	export TMUX_POWERLINE_SEG_AIR_DATA_PROVIDER="openweather"
-	# How often to update the weather in seconds.
-	export TMUX_POWERLINE_SEG_AIR_UPDATE_PERIOD="600"
-	# Location of the JSON parser, jq
-	export TMUX_POWERLINE_SEG_AIR_JSON="jq"
-	# Your location
-	# Latitude and Longitude:
-	TMUX_POWERLINE_SEG_AIR_LAT=""
-	TMUX_POWERLINE_SEG_AIR_LON=""
-	# Your Open Weather API Key:
-	TMUX_POWERLINE_SEG_AIR_OPEN_WEATHER_API_KEY=""
-# }
+# # air.sh {
+# 	# The data provider to use. Currently only "openweather" is supported.
+# 	export TMUX_POWERLINE_SEG_AIR_DATA_PROVIDER="openweather"
+# 	# How often to update the weather in seconds.
+# 	export TMUX_POWERLINE_SEG_AIR_UPDATE_PERIOD="600"
+# 	# Location of the JSON parser, jq
+# 	export TMUX_POWERLINE_SEG_AIR_JSON="jq"
+# 	# Your location
+# 	# Latitude and Longitude:
+# 	TMUX_POWERLINE_SEG_AIR_LAT=""
+# 	TMUX_POWERLINE_SEG_AIR_LON=""
+# 	# Your Open Weather API Key:
+# 	TMUX_POWERLINE_SEG_AIR_OPEN_WEATHER_API_KEY=""
+# # }
 
-# battery.sh {
-	# How to display battery remaining. Can be {percentage, cute, hearts}.
-	export TMUX_POWERLINE_SEG_BATTERY_TYPE="percentage"
-	# How may hearts to show if cute indicators are used.
-	export TMUX_POWERLINE_SEG_BATTERY_NUM_HEARTS="5"
-# }
+# # battery.sh {
+# 	# How to display battery remaining. Can be {percentage, cute, hearts}.
+# 	export TMUX_POWERLINE_SEG_BATTERY_TYPE="percentage"
+# 	# How may hearts to show if cute indicators are used.
+# 	export TMUX_POWERLINE_SEG_BATTERY_NUM_HEARTS="5"
+# # }
 
 # cpu_temp.sh {
 	# CPU temperature icon
@@ -96,32 +94,32 @@
 
 # dropbox_status.sh {
 	# The Dropbox glyph to use
-	export TMUX_POWERLINE_SEG_DROPBOX_GLYPH=""
+	# export TMUX_POWERLINE_SEG_DROPBOX_GLYPH=""
 	# Replace 'Uploading' in the status
-	export TMUX_POWERLINE_SEG_DROPBOX_UPLOAD_GLYPH=""
+	# export TMUX_POWERLINE_SEG_DROPBOX_UPLOAD_GLYPH=""
 	# Replace 'Downloading' in the status
-	export TMUX_POWERLINE_SEG_DROPBOX_DOWNLOAD_GLYPH=""
+	# export TMUX_POWERLINE_SEG_DROPBOX_DOWNLOAD_GLYPH=""
 	# Replace 'Indexing' in the status
-	export TMUX_POWERLINE_SEG_DROPBOX_INDEX_GLYPH=""
+	# export TMUX_POWERLINE_SEG_DROPBOX_INDEX_GLYPH=""
 	# Replace 'Syncing' in the status
-	export TMUX_POWERLINE_SEG_DROPBOX_SYNC_GLYPH=""
+	# export TMUX_POWERLINE_SEG_DROPBOX_SYNC_GLYPH=""
 # }
 
 # earthquake.sh {
 	# The data provider to use. Currently only "goo" is supported.
-	export TMUX_POWERLINE_SEG_EARTHQUAKE_DATA_PROVIDER="goo"
+	# export TMUX_POWERLINE_SEG_EARTHQUAKE_DATA_PROVIDER="goo"
 	# How often to update the earthquake data in seconds.
 	# Note: This is not an early warning detector, use this
 	# to be informed about recent earthquake magnitudes in your
 	# area. If this is too often, goo may decide to ban you form
 	# their server
-	export TMUX_POWERLINE_SEG_EARTHQUAKE_UPDATE_PERIOD="600"
+	# export TMUX_POWERLINE_SEG_EARTHQUAKE_UPDATE_PERIOD="600"
 	# Only display information when earthquakes are within this many minutes
-	export TMUX_POWERLINE_SEG_EARTHQUAKE_ALERT_TIME_WINDOW="60"
+	# export TMUX_POWERLINE_SEG_EARTHQUAKE_ALERT_TIME_WINDOW="60"
 	# Display time with this format
-	export TMUX_POWERLINE_SEG_EARTHQUAKE_TIME_FORMAT='(%H:%M)'
+	# export TMUX_POWERLINE_SEG_EARTHQUAKE_TIME_FORMAT='(%H:%M)'
 	# Display only if magnitude is greater or equal to this number
-	export TMUX_POWERLINE_SEG_EARTHQUAKE_MIN_MAGNITUDE="3"
+	# export TMUX_POWERLINE_SEG_EARTHQUAKE_MIN_MAGNITUDE="3"
 # }
 
 # gcalcli.sh {
@@ -208,37 +206,37 @@
 
 # }
 
-# mailcount.sh {
-	# Mailbox type to use. Can be any of {apple_mail, gmail, maildir, mbox, mailcheck}
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILBOX_TYPE=""
+# # mailcount.sh {
+# 	# Mailbox type to use. Can be any of {apple_mail, gmail, maildir, mbox, mailcheck}
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILBOX_TYPE=""
 	
-	## Gmail
-	# Enter your Gmail username here WITH OUT @gmail.com.( OR @domain)
-	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_USERNAME=""
-	# Google password. Recomenned to use application specific password (https://accounts.google.com/b/0/IssuedAuthSubTokens) Leave this empty to get password from OS X keychain.
-	# For macOS users : MAKE SURE that you add a key to the keychain in the format as follows
-	# Keychain Item name : http://<value-you-fill-in-server-variable-below>
-	# Account name : <username-below>@<server-below>
-	# Password : Your password ( Once again, try to use 2 step-verification and application-specific password)
-	# See http://support.google.com/accounts/bin/answer.py?hl=en&answer=185833 for more info.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_PASSWORD=""
-	# Domain name that will complete your email. For normal GMail users it probably is "gmail.com but can be "foo.tld" for Google Apps users.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_SERVER="gmail.com"
-	# How often in minutes to check for new mails.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_INTERVAL="5"
+# 	## Gmail
+# 	# Enter your Gmail username here WITH OUT @gmail.com.( OR @domain)
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_USERNAME=""
+# 	# Google password. Recomenned to use application specific password (https://accounts.google.com/b/0/IssuedAuthSubTokens) Leave this empty to get password from OS X keychain.
+# 	# For macOS users : MAKE SURE that you add a key to the keychain in the format as follows
+# 	# Keychain Item name : http://<value-you-fill-in-server-variable-below>
+# 	# Account name : <username-below>@<server-below>
+# 	# Password : Your password ( Once again, try to use 2 step-verification and application-specific password)
+# 	# See http://support.google.com/accounts/bin/answer.py?hl=en&answer=185833 for more info.
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_PASSWORD=""
+# 	# Domain name that will complete your email. For normal GMail users it probably is "gmail.com but can be "foo.tld" for Google Apps users.
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_SERVER="gmail.com"
+# 	# How often in minutes to check for new mails.
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_INTERVAL="5"
 	
-	## Maildir
-	# Path to the maildir to check.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/home/sylvain/.mail/inbox/new"
+# 	## Maildir
+# 	# Path to the maildir to check.
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/home/sylvain/.mail/inbox/new"
 	
-	## mbox
-	# Path to the mbox to check.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MBOX_INBOX=""
+# 	## mbox
+# 	# Path to the mbox to check.
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_MBOX_INBOX=""
 	
-	## mailcheck
-	# Optional path to mailcheckrc
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/home/sylvain/.mailcheckrc"
-# }
+# 	## mailcheck
+# 	# Optional path to mailcheckrc
+# 	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/home/sylvain/.mailcheckrc"
+# # }
 
 # mem_used.sh {
 	# Memory icon
@@ -274,68 +272,68 @@
 	export TMUX_POWERLINE_SEG_MODE_INDICATOR_SEPARATOR_TEXT=" • "
 # }
 
-# now_playing.sh {
-	# Music player to use. Can be any of {audacious, banshee, cmus, apple_music, itunes, lastfm, plexamp, mocp, mpd, mpd_simple, pithos, playerctl, rdio, rhythmbox, spotify, file}.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="spotify"
-	# File to be read in case the song is being read from a file
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_FILE_NAME=""
-	# Maximum output length.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="40"
-	# How to handle too long strings. Can be {trim, roll}.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="trim"
-	# Characters per second to roll if rolling trim method is used.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SPEED="2"
-	# Mode of roll text {"space", "repeat"}. space: fill up with empty space; repeat: repeat text from beginning
-	# export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_MODE="repeat"
-	# Separator for "repeat" roll mode
-	# export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SEPARATOR="   "
-	# If set to 'true', 'yes', 'on' or '1', played tracks will be logged to a file.
-	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_ENABLE="false"
-	# If enabled, log played tracks to the following file:
-	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_FILEPATH="/home/sylvain/.now_playing.log"
-	# Maximum number of logged song entries. Set to "unlimited" for unlimited entries.
-	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_MAX_ENTRIES="100"
+# # now_playing.sh {
+# 	# Music player to use. Can be any of {audacious, banshee, cmus, apple_music, itunes, lastfm, plexamp, mocp, mpd, mpd_simple, pithos, playerctl, rdio, rhythmbox, spotify, file}.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="spotify"
+# 	# File to be read in case the song is being read from a file
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_FILE_NAME=""
+# 	# Maximum output length.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="40"
+# 	# How to handle too long strings. Can be {trim, roll}.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="trim"
+# 	# Characters per second to roll if rolling trim method is used.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SPEED="2"
+# 	# Mode of roll text {"space", "repeat"}. space: fill up with empty space; repeat: repeat text from beginning
+# 	# export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_MODE="repeat"
+# 	# Separator for "repeat" roll mode
+# 	# export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SEPARATOR="   "
+# 	# If set to 'true', 'yes', 'on' or '1', played tracks will be logged to a file.
+# 	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_ENABLE="false"
+# 	# If enabled, log played tracks to the following file:
+# 	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_FILEPATH="/home/sylvain/.now_playing.log"
+# 	# Maximum number of logged song entries. Set to "unlimited" for unlimited entries.
+# 	# export TMUX_POWERLINE_SEG_NOW_PLAYING_TRACK_LOG_MAX_ENTRIES="100"
 	
-	# Hostname for MPD server in the format "[password@]host"
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_HOST="localhost"
-	# Port the MPD server is running on.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_PORT="6600"
-	# Song display format for mpd_simple. See mpc(1) for delimiters.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_SIMPLE_FORMAT="%artist% - %title%"
-	# Song display format for playerctl. see "Format Strings" in playerctl(1).
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLAYERCTL_FORMAT="{{ artist }} - {{ title }}"
-	# Song display format for rhythmbox. see "FORMATS" in rhythmbox-client(1).
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_RHYTHMBOX_FORMAT="%aa - %tt"
+# 	# Hostname for MPD server in the format "[password@]host"
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_HOST="localhost"
+# 	# Port the MPD server is running on.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_PORT="6600"
+# 	# Song display format for mpd_simple. See mpc(1) for delimiters.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_SIMPLE_FORMAT="%artist% - %title%"
+# 	# Song display format for playerctl. see "Format Strings" in playerctl(1).
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLAYERCTL_FORMAT="{{ artist }} - {{ title }}"
+# 	# Song display format for rhythmbox. see "FORMATS" in rhythmbox-client(1).
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_RHYTHMBOX_FORMAT="%aa - %tt"
 	
-	# Last.fm
-	# Set up steps for Last.fm
-	# 1. Make sure jq(1) is installed on the system.
-	# 2. Create a new API application at https://www.last.fm/api/account/create (name it tmux-powerline) and copy the API key and insert it below in the setting TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_API_KEY
-	# 3. Make sure the API can access your recently played song by going to you user privacy settings https://www.last.fm/settings/privacy and make sure "Hide recent listening information" is UNCHECKED.
-	# Username for Last.fm if that music player is used.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_USERNAME=""
-	# API Key for the API.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_API_KEY=""
-	# How often in seconds to update the data from last.fm.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_UPDATE_PERIOD="30"
-	# Fancy char to display before now playing track
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_NOTE_CHAR="♫"
-	# Text to display when nothing is playing. If empty, segment will not be displayed.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_NOT_PLAYING=""
+# 	# Last.fm
+# 	# Set up steps for Last.fm
+# 	# 1. Make sure jq(1) is installed on the system.
+# 	# 2. Create a new API application at https://www.last.fm/api/account/create (name it tmux-powerline) and copy the API key and insert it below in the setting TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_API_KEY
+# 	# 3. Make sure the API can access your recently played song by going to you user privacy settings https://www.last.fm/settings/privacy and make sure "Hide recent listening information" is UNCHECKED.
+# 	# Username for Last.fm if that music player is used.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_USERNAME=""
+# 	# API Key for the API.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_API_KEY=""
+# 	# How often in seconds to update the data from last.fm.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_UPDATE_PERIOD="30"
+# 	# Fancy char to display before now playing track
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_NOTE_CHAR="♫"
+# 	# Text to display when nothing is playing. If empty, segment will not be displayed.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_NOT_PLAYING=""
 	
-	# Plexamp
-	# Set up steps for Plexamp
-	# 1. Make sure jq(1) is installed on the system.
-	# 2. Make sure you have an instance of Tautulli that is accessible by the computer running tmux-powerline.
-	# Username for Plexamp if that music player is used.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_USERNAME=""
-	# Hostname for Tautulli server in the format "[password@]host"
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_TAUTULLI_HOST=""
-	# API Key for Tautulli.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_TAUTULLI_API_KEY=""
-	# How often in seconds to update the data from Plexamp.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_UPDATE_PERIOD="30"
-# }
+# 	# Plexamp
+# 	# Set up steps for Plexamp
+# 	# 1. Make sure jq(1) is installed on the system.
+# 	# 2. Make sure you have an instance of Tautulli that is accessible by the computer running tmux-powerline.
+# 	# Username for Plexamp if that music player is used.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_USERNAME=""
+# 	# Hostname for Tautulli server in the format "[password@]host"
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_TAUTULLI_HOST=""
+# 	# API Key for Tautulli.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_TAUTULLI_API_KEY=""
+# 	# How often in seconds to update the data from Plexamp.
+# 	export TMUX_POWERLINE_SEG_NOW_PLAYING_PLEXAMP_UPDATE_PERIOD="30"
+# # }
 
 # pwd.sh {
 	# Maximum length of output.
@@ -350,17 +348,17 @@
 	# export TMUX_POWERLINE_SEG_TIME_TZ=""
 # }
 
-# tmux_continuum_save.sh {
-	# Path to the tmux-continuum git repo.
-	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PATH="/home/sylvain/.config/tmux/plugins/tmux-continuum"
-# }
+# # tmux_continuum_save.sh {
+# 	# Path to the tmux-continuum git repo.
+# 	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PATH="/home/sylvain/.config/tmux/plugins/tmux-continuum"
+# # }
 
-# tmux_continuum_status.sh {
-	# Path to the tmux-continuum git repo.
-	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PATH="/home/sylvain/.config/tmux/plugins/tmux-continuum"
-	# Message to perfix the status indication with.
-	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PREFIX="Continuum status: "
-# }
+# # tmux_continuum_status.sh {
+# 	# Path to the tmux-continuum git repo.
+# 	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PATH="/home/sylvain/.config/tmux/plugins/tmux-continuum"
+# 	# Message to perfix the status indication with.
+# 	export TMUX_POWERLINE_SEG_TMUX_CONTINUUM_PREFIX="Continuum status: "
+# # }
 
 # tmux_mem_cpu_load.sh {
 	# Arguments passed to tmux-mem-cpu-load.
@@ -457,21 +455,21 @@
 	# export TMUX_POWERLINE_SEG_WAN_IP_SYMBOL_COLOUR="255"
 # }
 
-# weather.sh {
-	# The data provider to use. Currently only "yrno" is supported.
-	export TMUX_POWERLINE_SEG_WEATHER_DATA_PROVIDER="yrno"
-	# What unit to use. Can be any of {c,f,k}.
-	export TMUX_POWERLINE_SEG_WEATHER_UNIT="c"
-	# How often to update the weather in seconds.
-	export TMUX_POWERLINE_SEG_WEATHER_UPDATE_PERIOD="600"
-	# How often to update the weather location in seconds (this is only used when latitude and longitude settings are set to "auto")
-	export TMUX_POWERLINE_SEG_WEATHER_LOCATION_UPDATE_PERIOD="86400"
-	# Your location
-	# Latitude and Longtitude for use with yr.no
-	# Set both to "auto" to detect automatically based on your IP address, or set them manually
-	export TMUX_POWERLINE_SEG_WEATHER_LAT="auto"
-	export TMUX_POWERLINE_SEG_WEATHER_LON="auto"
-# }
+# # weather.sh {
+# 	# The data provider to use. Currently only "yrno" is supported.
+# 	export TMUX_POWERLINE_SEG_WEATHER_DATA_PROVIDER="yrno"
+# 	# What unit to use. Can be any of {c,f,k}.
+# 	export TMUX_POWERLINE_SEG_WEATHER_UNIT="c"
+# 	# How often to update the weather in seconds.
+# 	export TMUX_POWERLINE_SEG_WEATHER_UPDATE_PERIOD="600"
+# 	# How often to update the weather location in seconds (this is only used when latitude and longitude settings are set to "auto")
+# 	export TMUX_POWERLINE_SEG_WEATHER_LOCATION_UPDATE_PERIOD="86400"
+# 	# Your location
+# 	# Latitude and Longtitude for use with yr.no
+# 	# Set both to "auto" to detect automatically based on your IP address, or set them manually
+# 	export TMUX_POWERLINE_SEG_WEATHER_LAT="auto"
+# 	export TMUX_POWERLINE_SEG_WEATHER_LON="auto"
+# # }
 
 # xkb_layout.sh {
 	# Keyboard icon
