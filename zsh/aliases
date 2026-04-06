@@ -42,6 +42,13 @@ alias -g NULL=">/dev/null 2>&1"
 alias -g NO2="2>/dev/null"
 alias -g JQ="| jq"
 
+# Tmux
+alias tm='tmux'
+alias tmv='tmux splitw -v'
+alias tmh='tmux splitw -h'
+alias vspl='tmv'
+alias hspl='tmh'
+
 # Make
 alias mk='make'
 alias mkb='make build'
