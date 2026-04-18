@@ -22,6 +22,7 @@ alias more='less'
 alias psu='ps -u $USER -o pid,ppid,%cpu,%mem,command'
 alias curl='curl -ks --netrc-file $HOME/.config/curl/netrc '
 alias chromedev='chrome --auto-open-devtools-for-tabs'
+alias _apt='sudo apt'
 
 case ${osid} in 
 	ubuntu)
@@ -48,6 +49,7 @@ alias tmv='tmux splitw -v'
 alias tmh='tmux splitw -h'
 alias vspl='tmv'
 alias hspl='tmh'
+alias vtop='tmux splitw -h "btop"'
 
 # Make
 alias mk='make'
