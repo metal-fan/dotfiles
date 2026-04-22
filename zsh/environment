@@ -58,3 +58,11 @@ export vrest_list="rest/vcenter/vm"
 
 # Nixos flakes and co
 export NH_FLAKE=$HOME/code/nixos
+
+# Claude code
+export ANTHROPIC_BASE_URL="http://localhost:11434"
+export ANTHROPIC_AUTH_TOKEN="ollama"
+export ANTHROPIC_API_KEY=""
+
+# Ollama
+export OLLAMA_NUM_GPU=1
