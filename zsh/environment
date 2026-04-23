@@ -63,10 +63,10 @@ export NH_FLAKE=$HOME/code/nixos
 export ANTHROPIC_BASE_URL="http://localhost:11434"
 export ANTHROPIC_AUTH_TOKEN="ollama"
 export ANTHROPIC_API_KEY=""
-export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=0
 export PATH="$HOME/.local/bin:$PATH"
 
 # Ollama
-export OLLAMA_NUM_GPU=1
+export OLLAMA_NUM_GPU=24
 
 # EOF

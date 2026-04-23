@@ -1,3 +1,15 @@
 {
-  "model": "gemma4:31b"
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "gemma4:31b",
+  "language": "french",
+  "companyAnnouncements": [
+    "Welcome to ARMONA SYSTEMS ! Review our code guidelines at docs.armona.fr",
+    "Reminder: Code reviews required for all PRs",
+    "New security policy in effect"
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/claude/statusline.sh"
+  },
+  "defaulMode" : "AcceptEdits"
 }
