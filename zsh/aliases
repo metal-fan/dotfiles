@@ -116,6 +116,7 @@ alias o="ollama"
 alias orun="ollama run"
 alias olist="ollama list"
 alias opull="ollama pull"
+alias ogemma="ollama run gemma4:31b"
 
 # Elasticsearch
 alias eln='curl http://localhost:9200/_cat/nodes?v'
