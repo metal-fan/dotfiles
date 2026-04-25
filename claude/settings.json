@@ -1,15 +1,26 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "model": "gemma4:31b",
+  "model": "sylvain.qwen:27b",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/claude/statusline.sh"
+  },
   "language": "french",
   "companyAnnouncements": [
     "Welcome to ARMONA SYSTEMS ! Review our code guidelines at docs.armona.fr",
     "Reminder: Code reviews required for all PRs",
     "New security policy in effect"
   ],
-  "statusLine": {
-    "type": "command",
-    "command": "~/.config/claude/statusline.sh"
-  },
-  "defaulMode" : "AcceptEdits"
+  "defaulMode": "AcceptEdits",
+  "allow": [
+    "Read(**)",
+    "Edit(**)",
+    "Write(**)",
+    "Bash(*)",
+    "LS(**)",
+    "Grep(**)",
+    "Glob(**)",
+    "WebFetch",
+    "MCP"
+  ]
 }
