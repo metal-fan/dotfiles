@@ -160,7 +160,7 @@ if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 		"hostname $eggplant $thm_bg"
 		#"ifstat 30 255"
 		#"ifstat_sys 30 255"
-		"lan_ip $sky_blue $thm_bg ${TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD}"
+		#"lan_ip $sky_blue $thm_bg ${TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD}"
 		# "wan_ip $sky_blue $thm_bg"
 		# "vcs_branch $thm_gray"
 		#"air ${TMUX_POWERLINE_SEG_AIR_COLOR} $thm_bg"
@@ -175,7 +175,7 @@ fi
 if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		# "earthquake 3 0"
-		"pwd $mauve $surface0"
+		#"pwd $mauve $surface0"
 		#"macos_notification_count 29 255"
 		#"mailcount 9 255"
 		"now_playing $spotify_green $spotify_black"
