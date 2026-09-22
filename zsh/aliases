@@ -3,7 +3,8 @@
 # Pour tous les linux
 alias rerun="source $HOME/.zshrc"
 alias ls='ls -GL'
-alias ll='ls -lh'
+#alias ll='ls -lh'
+alias ll='eza -lag --icons'
 alias la='ls -A'
 alias lsa='ls -A | grep ^[.]'
 alias lla='ls -lA | grep ^[.]'
