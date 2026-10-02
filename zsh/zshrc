@@ -8,11 +8,14 @@ for script in environment aliases functions prompt; do
 done
 autoload zmv
 
+# oh-my-zsh
+#
 plugins=(git macos ruby)
 ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX="true"
 DEFAULT_USER=$USER
 
+zstyle ':omz:lib:directories' aliases no
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
